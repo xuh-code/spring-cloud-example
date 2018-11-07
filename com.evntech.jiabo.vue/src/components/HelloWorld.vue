@@ -80,6 +80,13 @@
         </a>
       </li>
     </ul>
+    <button @click="click_">jq测试</button>
+    <input value="123123123" class="test_input">
+    <div class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-default">Left</button>
+      <button type="button" class="btn btn-default">Middle</button>
+      <button type="button" class="btn btn-default">Right</button>
+    </div>
   </div>
 </template>
 
@@ -89,6 +96,11 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    click_: function () {
+      alert($('.test_input').val())
     }
   }
 }
