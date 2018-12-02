@@ -1,4 +1,4 @@
-# com.evntech.jiabo.vue
+# com.envtech.jiabo.vue
 
 > 佳博前端
 
