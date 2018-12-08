@@ -4,34 +4,34 @@
 			<div class="container">
 				<div class="row footer-top  text-center">
 					<div class="col-sm-6 col-md-3">
-							<h4>微信咨询</h4>
-							<p><img src="@/assets/images/wx-img.jpg" /></p>
+						<h4>微信咨询</h4>
+						<p><img src="@/assets/images/wx-img.jpg" /></p>
 					</div>
 					<div class="col-sm-6 col-md-3">
-							<h4>关于</h4>
-							<p> <a href="/about.html">关于我们</a></p>
-							<p> <a href="/about.html">关于我们</a></p>
-							<p> <a href="/about.html">关于我们</a></p>
-							<p> <a href="/about.html">关于我们</a></p>
-							<p> <a href="/about.html">关于我们</a></p>
+						<h4>关于</h4>
+						<p> <a href="/about.html">关于我们</a></p>
+						<p> <a href="/about.html">关于我们</a></p>
+						<p> <a href="/about.html">关于我们</a></p>
+						<p> <a href="/about.html">关于我们</a></p>
+						<p> <a href="/about.html">关于我们</a></p>
 					</div>
 					<div class="col-sm-6 col-md-3">
-							<h4>淘宝店铺</h4>
-							<p> <a href="/about.html">关于我们</a></p>
-							<p> <a href="/about.html">关于我们</a></p>
-							<p> <a href="/about.html">关于我们</a></p>
-							<p> <a href="/about.html">关于我们</a></p>
-							<p> <a href="/about.html">关于我们</a></p>
+						<h4>淘宝店铺</h4>
+						<p> <a href="/about.html">关于我们</a></p>
+						<p> <a href="/about.html">关于我们</a></p>
+						<p> <a href="/about.html">关于我们</a></p>
+						<p> <a href="/about.html">关于我们</a></p>
+						<p> <a href="/about.html">关于我们</a></p>
 					</div>
 					<div class="col-sm-6 col-md-3">
-							<h4>友情链接</h4>
-							<p> <a href="/about.html">关于我们</a></p>
-							<p> <a href="/about.html">关于我们</a></p>
-							<p> <a href="/about.html">关于我们</a></p>
-							<p> <a href="/about.html">关于我们</a></p>
+						<h4>友情链接</h4>
+						<p> <a href="/about.html">关于我们</a></p>
+						<p> <a href="/about.html">关于我们</a></p>
+						<p> <a href="/about.html">关于我们</a></p>
+						<p> <a href="/about.html">关于我们</a></p>
 					</div>
 				</div>
-				<hr/>
+				<hr />
 				<div class="row footer-bottom">
 					<ul class="list-inline text-center">
 						<li>
@@ -72,6 +72,12 @@
 	});
 </script>
 <style scoped>
+	#footer{
+		background: url(../../assets/images/animated-number/bg.jpg) no-repeat 0 0;
+		background-size: cover;
+		color: #fff;
+	}
+	
 	#footer h4 {
 		font-weight: 600;
 		color: #FFFFFF;

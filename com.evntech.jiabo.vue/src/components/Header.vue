@@ -10,19 +10,17 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html"><img src="../assets/logo.png" alt="logo"></a>
+						<a class="navbar-brand" href="index.html"><img src="@/assets/logo.png" alt="logo"></a>
 					</div>
 					<div class="collapse navbar-collapse navbar-right">
 						<ul class="nav navbar-nav">
-							<li class="scroll active"><a href="/">Home</a></li>
-							<li class="scroll"><a href="features">Features</a></li>
-							<li class="scroll"><a href="services">Services</a></li>
-							<li class="scroll"><a href="portfolio">Portfolio</a></li>
-							<li class="scroll"><a href="about">About</a></li>
-							<li class="scroll"><a href="meet-team">Team</a></li>
-							<li class="scroll"><a href="pricing">Pricing</a></li>
-							<li class="scroll"><a href="blog">Blog</a></li>
-							<li class="scroll"><a href="get-in-touch">Contact</a></li>
+							<li class="scroll active"><a href="/">首页</a></li>
+							<li class="scroll"><a href="features">走进佳博</a></li>
+							<li class="scroll"><a href="services">技术服务</a></li>
+							<li class="scroll"><a href="product">产品中心</a></li>
+							<li class="scroll"><a href="news">新闻资讯</a></li>
+							<li class="scroll"><a href="about">关于我们</a></li>
+							<li class="scroll"><a href="content">联系我们</a></li>
 						</ul>
 					</div>
 				</div>
