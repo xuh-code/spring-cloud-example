@@ -397,102 +397,55 @@
 				</div>
 			</div>
 		</section>
+		<!-- 联系我们 title -->
+		<section id="get-in-touch">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">联系我们</h2>
+            </div>
+        </div>
+    </section>
 		<!-- 联系我们 -->
-		<section id="work-process">
-			<div id="baiduMap"></div>
-			<div class="container">
-				<div class="section-header">
-					<h2 class="section-title text-center wow fadeInDown">联系我们</h2>
-					<p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
-				</div>
-
-				<!-- name  email -->
-				<div class="row text-center">
+		<section id="contact">
+			<div id="google-map"></div>
+			<div class="container-wrapper">
+				<div class="container">
 					<div class="row">
-						<div class="col-md-1 text-center"></div>
+						<div class="col-md-4 col-md-offset-8 col-sm-6 col-sm-offset-6">
+							<div class="contact-form">
+								<h3>Contact Info</h3>
 
-						<div class="col-md-10 text-center">
-							<div class="col-sm-6 contact-form">
+								<address>
+									<strong>Twitter, Inc.</strong><br>
+									795 Folsom Ave, Suite 600<br>
+									San Francisco, CA 94107<br>
+									<abbr title="Phone">P:</abbr> (123) 456-7890
+								</address>
 
 								<form id="main-contact-form" name="contact-form" method="post" action="#">
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												<span class="input-icon icon-right">
-													<input type="text" class="form-control" placeholder="Name">
-													<i class="fa fa-user"></i>
-												</span>
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<span class="input-icon icon-right">
-													<input type="text" class="form-control" placeholder="Family">
-													<i class="fa fa-user"></i>
-												</span>
-											</div>
-										</div>
+									<div class="form-group">
+										<input type="text" name="name" class="form-control" placeholder="Name" required>
 									</div>
 									<div class="form-group">
-										<textarea name="message" class="form-control" rows="8" placeholder="Message" required=""></textarea>
+										<input type="text" name="phone" class="form-control" placeholder="Phone" required>
+									</div>
+									<div class="form-group">
+										<input type="email" name="email" class="form-control" placeholder="Email" required>
+									</div>
+									<div class="form-group">
+										<input type="text" name="subject" class="form-control" placeholder="Subject" required>
+									</div>
+									<div class="form-group">
+										<textarea name="message" class="form-control" rows="8" placeholder="Message" required></textarea>
 									</div>
 									<button type="submit" class="btn btn-primary">Send Message</button>
 								</form>
-
-								<div class="form-group">
-									<span class="input-icon icon-right">
-										<input type="text" class="form-control" placeholder="Name">
-										<i class="fa fa-user"></i>
-									</span>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="form-group">
-									<span class="input-icon icon-right">
-										<input type="text" class="form-control" placeholder="Family">
-										<i class="fa fa-user"></i>
-									</span>
-								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<!-- 手机号  email -->
-				<div class="row text-center">
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="form-group">
-								<span class="input-icon icon-right">
-									<input type="text" class="form-control" placeholder="Phone">
-									<i class="glyphicon glyphicon-earphone"></i>
-								</span>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="form-group">
-								<span class="input-icon icon-right">
-									<input type="text" class="form-control" placeholder="Mobile">
-									<i class="glyphicon glyphicon-phone"></i>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<hr class="wide">
-				<!-- 主题 -->
-				<div class="row text-center">
-					<textarea class="form-control" rows="3" placeholder="Content"></textarea>
-				</div>
-
-				<!-- 详情 -->
-				<div class="row text-center">
-					<div class="row"></div>
 				</div>
 			</div>
 		</section>
-
 		<page-footer></page-footer>
 	</div>
 </template>
@@ -500,7 +453,7 @@
 <script>
 	import 'bootstrap/dist/css/bootstrap.min.css'
 	import 'bootstrap/dist/js/bootstrap.min.js'
-	var map = new BMap.Map("baiduMap")
+	var map = new BMap.Map("google-map")
 
 	export default {
 		name: 'app',
@@ -510,7 +463,7 @@
 		methods: {
 			getBaiduMap: function() {
 				// 百度地图API功能
-				var map = new BMap.Map("baiduMap"); // 创建Map实例
+				var map = new BMap.Map("google-map"); // 创建Map实例
 				map.centerAndZoom(new BMap.Point(116.404, 39.915), 11); // 初始化地图,设置中心点坐标和地图级别
 				//添加地图类型控件
 				map.addControl(new BMap.MapTypeControl({
@@ -532,9 +485,4 @@
 	@import '../../assets/style/responsive.css';
 	@import '../../assets/style/font-awesome.min.css';
 
-	#baiduMap {
-		height: 650px;
-		position: relative;
-		overflow: hidden;
-	}
 </style>
