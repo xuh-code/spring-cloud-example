@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.xuhweb.eureka</groupId>
-    <artifactId>eureka-7001</artifactId>
+    <artifactId>eureka-7002</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>eureka-7001</name>
+    <name>eureka-7002</name>
     <description>注册中心</description>
 
     <parent>
@@ -17,27 +17,14 @@
         <version>1.0.0</version>
     </parent>
 
+
     <dependencies>
-        <!--eureka-server服务端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
 
-        <!--  spring boot 启动-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter</artifactId>-->
-        <!--</dependency>-->
-
-        <!--SpringBoot Test 测试-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-test</artifactId>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
     </dependencies>
-
 
     <build>
         <finalName>${project.name}</finalName>
@@ -60,7 +47,6 @@
             </plugin>
         </plugins>
     </build>
-
 
 
 </project>
