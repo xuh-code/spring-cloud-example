@@ -9,24 +9,31 @@
         <version>1.0.0</version>
     </parent>
 
-    <groupId>cn.xuhweb.news</groupId>
-    <artifactId>cn-xuhweb-news-10001</artifactId>
+    <groupId>cn.xuhweb.feign</groupId>
+    <artifactId>cn-xuhweb-feign-9000</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>cn.xuhweb.news-10001</name>
-    <description>新闻中心</description>
+    <name>feign-9000</name>
+    <description>断路器-9000</description>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -50,4 +57,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

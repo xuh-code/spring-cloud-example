@@ -9,15 +9,17 @@
         <version>1.0.0</version>
     </parent>
 
-    <groupId>cn.xuhweb.news</groupId>
-    <artifactId>cn-xuhweb-news-10001</artifactId>
+    <groupId>cn.xuhweb.zuul.gateway</groupId>
+    <artifactId>cn-xuhweb-zuul-gateway-7090</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>cn.xuhweb.news-10001</name>
-    <description>新闻中心</description>
+    <name>zuul.gateway-7090</name>
+    <description>网关-7090</description>
 
     <dependencies>
+
+        <!--  注册到注册中心  -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -27,7 +29,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!--  Cloud网关  -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+        </dependency>
+
     </dependencies>
+
 
     <build>
         <finalName>${project.name}</finalName>
@@ -50,4 +60,6 @@
             </plugin>
         </plugins>
     </build>
+
+
 </project>

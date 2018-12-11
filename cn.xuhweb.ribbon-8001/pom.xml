@@ -9,15 +9,16 @@
         <version>1.0.0</version>
     </parent>
 
-    <groupId>cn.xuhweb.news</groupId>
-    <artifactId>cn-xuhweb-news-10001</artifactId>
+    <groupId>cn.xuhweb.ribbon</groupId>
+    <artifactId>cn-xuhweb-ribbon-8001</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>cn.xuhweb.news-10001</name>
-    <description>新闻中心</description>
+    <name>ribbon-8001</name>
+    <description>Demo project for Spring Boot</description>
 
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -27,6 +28,24 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!--  Hystrix断路器依赖  -->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>-->
+        <!--</dependency>-->
+
+        <!--spring-cloud-starter-netflix-eureka-client 会引入 netflix-ribbon 依赖-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.cloud</groupId>-->
+        <!--<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>-->
+        <!--</dependency>-->
+
     </dependencies>
 
     <build>
@@ -50,4 +69,6 @@
             </plugin>
         </plugins>
     </build>
+
+
 </project>

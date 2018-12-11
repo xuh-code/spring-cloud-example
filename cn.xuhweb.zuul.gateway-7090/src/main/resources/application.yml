@@ -1,0 +1,37 @@
+server:
+  port: 7090
+
+spring:
+  application:
+    name: zuul-gateway
+
+# 注册到注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+#  instance:
+#    instance-id: ${spring.cloud.client.ipAddress}:${server.port}   #自定义服务名称信息  启动多个服务做集群需要设置为不同的ID值
+#    prefer-ip-address: true   #访问路径可以显示IP地址
+
+
+# 测试的访问地址：http://localhost:9527/java3y/mydept/dept/list
+
+zuul:
+  #ignored-services: microservicecloud-dept
+#  prefix: /java3y
+#  ignored-services: "*"
+  routes:
+    new-center:
+      serviceId: new-center
+      path: /news/**
+
+logging:
+  level:
+    com.netflix: debug
+
+info:
+  app.name: xuh-web
+  company.name: www.xuhweb.cn
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

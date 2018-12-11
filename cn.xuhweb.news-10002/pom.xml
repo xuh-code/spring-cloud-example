@@ -10,11 +10,11 @@
     </parent>
 
     <groupId>cn.xuhweb.news</groupId>
-    <artifactId>cn-xuhweb-news-10001</artifactId>
+    <artifactId>cn-xuhweb-news-10002</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>cn.xuhweb.news-10001</name>
+    <name>cn-xuhweb.news-10002</name>
     <description>新闻中心</description>
 
     <dependencies>
@@ -27,6 +27,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -50,4 +51,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
