@@ -23,8 +23,10 @@ zuul:
 #  ignored-services: "*"
   routes:
     new-center:
+      strip-prefix: false # 不截取匹配路径
       serviceId: new-center
       path: /news/**
+
 
 logging:
   level:

@@ -20,7 +20,9 @@
     <modules>
         <module>cn.xuhweb.eureka-7001</module>
         <module>cn.xuhweb.eureka-7002</module>
+        <module>cn.xuhweb.zuul.gateway-7090</module>
         <module>cn.xuhweb.ribbon-8001</module>
+        <module>cn.xuhweb.feign-9000</module>
         <module>cn.xuhweb.news-10001</module>
         <module>cn.xuhweb.news-10002</module>
     </modules>
