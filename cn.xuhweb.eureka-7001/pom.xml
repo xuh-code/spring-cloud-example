@@ -18,11 +18,18 @@
     </parent>
 
     <dependencies>
-        <!--eureka-server服务端 -->
+
+        <!--  安全认证  -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-security</artifactId>
         </dependency>
+
+        <!--eureka-server服务端 -->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>-->
+        <!--</dependency>-->
 
         <!--  spring boot 启动-->
         <!--<dependency>-->

@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: user-center
+  profiles:
+    active: dev
+
+#Redis cache 过期时间设置
+redis:
+  cache:
+    expiration: 3600
+
+
+#  cloud:
+#    config:
+#      fail-fast: true
+#      discovery:
+#          service-id: pig-config-server
+#          enabled: true
+#      profile: ${spring.profiles.active}
+#      label: ${spring.profiles.active}
+
+
+##�Զ��������ݿ�
+#spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+#spring.jpa.hibernate.ddl-auto=update
+#
+###===============================##
+### redis
+## spring boot ����redis
+###===============================##
+#spring.redis.host=localhost
+#spring.redis.port=6379
+#spring.redis.password=
+#spring.redis.database=0
+#spring.redis.pool.maxTotal=100
+#spring.redis.pool.maxWaitMillis=-1
+#spring.redis.pool.maxIdle=10
+#spring.redis.pool.min-idle=0
+#spring.redis.timeout=0
