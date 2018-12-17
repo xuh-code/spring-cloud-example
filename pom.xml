@@ -18,11 +18,14 @@
 
 
     <modules>
+        <module>cn.xuhweb.auth-service-3000</module>
         <!--  公共模块  -->
         <module>cn.xuhweb.common</module>
         <!--  注册中心  -->
         <module>cn.xuhweb.eureka-7001</module>
         <module>cn.xuhweb.eureka-7002</module>
+
+        <module>cn.xuhweb.auth-service-7060</module>
         <!--  微服务网关  -->
         <module>cn.xuhweb.zuul.gateway-7090</module>
         <!--  用户中心  -->
