@@ -7,6 +7,7 @@ import org.springframework.security.core.SpringSecurityCoreVersion;
 import java.util.Collection;
 
 /**
+ * 手机号登录令牌
  * Created by xuh
  * DATE 2018/12/16 23:52.
  * version 1.0
@@ -17,7 +18,7 @@ public class MobileAuthenticationToken extends AbstractAuthenticationToken {
 
     private final Object principal;
 
-    public MobileAuthenticationToken(String mobile){
+    public MobileAuthenticationToken(String mobile) {
         super(null);
         this.principal = mobile;
         setAuthenticated(false);
