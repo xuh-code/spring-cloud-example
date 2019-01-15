@@ -1,16 +1,16 @@
 server:
-  port: 7002
+  port: 7001
 
 eureka:
   instance:
-    hostname: eureka7002.com #eureka服务端的实例名称(这里使用了虚拟主机映射，修改hosts文件即可实现)
+    hostname: eureka7001.com #eureka服务端的实例名称(这里使用了虚拟主机映射，修改hosts文件即可实现)
   client:
     register-with-eureka: false     #false表示不向注册中心注册自己。
     fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
     service-url:
       #单机 defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址（单机）。
-      defaultZone: http://eureka7001.com:7001/eureka/
+      defaultZone: http://eureka7002.com:7002/eureka/
   #      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:  #配置属性，但由于 Eureka 自我保护模式以及心跳周期长的原因，经常会遇到 Eureka Server 不剔除已关停的节点的问题
     enable-self-preservation: false
@@ -23,7 +23,7 @@ spring:
     config:
       enabled: false
 
-  security:
-    user:
-      name: qidu # 定义用户名
-      password: qidu!@#123 # 定义密码
+#  security:
+#    user:
+#      name: qidu # 定义用户名
+#      password: qidu!@#123 # 定义密码

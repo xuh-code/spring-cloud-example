@@ -18,7 +18,6 @@
 
 
     <modules>
-        <module>cn.xuhweb.auth-service-3000</module>
         <!--  公共模块  -->
         <module>cn.xuhweb.common</module>
         <!--  注册中心  -->
@@ -31,8 +30,8 @@
         <module>cn.xuhweb.user-center-7070</module>
         <module>cn.xuhweb.ribbon-8001</module>
         <module>cn.xuhweb.feign-9000</module>
+        <!--  新闻中心  -->
         <module>cn.xuhweb.news-10001</module>
-        <module>cn.xuhweb.news-10002</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -67,10 +66,10 @@
 
     <dependencies>
         <!--eureka-server服务端 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>-->
+        <!--</dependency>-->
 
         <!--配置中心-->
         <dependency>

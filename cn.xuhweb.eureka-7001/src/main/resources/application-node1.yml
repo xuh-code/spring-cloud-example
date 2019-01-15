@@ -23,7 +23,7 @@ spring:
     config:
       enabled: false
 
-  security:
-    user:
-      name: qidu # 定义用户名
-      password: qidu!@#123 # 定义密码
+#  security:
+#    user:
+#      name: qidu # 定义用户名
+#      password: qidu!@#123 # 定义密码
