@@ -5,11 +5,11 @@ spring:
 #  application Name
   application:
     name: auth-service
-#    dev环境
+#    dev active
   profiles:
     active: dev
 
-  # datasoure默认使用JDBC
+  # datasoure MySQL JDBC
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root

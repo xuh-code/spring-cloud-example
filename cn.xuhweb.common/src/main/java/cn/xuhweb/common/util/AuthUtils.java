@@ -4,10 +4,9 @@ import cn.xuhweb.common.constant.CommonConstant;
 import cn.xuhweb.common.util.exception.CheckedException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.codec.Base64;
-import sun.org.mozilla.javascript.internal.Token;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 /**
  * 认证授权相关工具类
@@ -36,11 +35,29 @@ public class AuthUtils {
 
         int delim = token.indexOf(":");
 
-        if (delim == -1){
+        if (delim == -1) {
             throw new CheckedException("Invalid basic authentication token");
         }
 
         return new String[]{token.substring(0, delim), token.substring(delim + 1)};
     }
 
+
+    /**
+     * *从header 请求中的clientId/clientsecect
+     *
+     * @param request
+     * @return
+     * @throws IOException
+     */
+    public static String[] extractAndDecodeHeader(HttpServletRequest request)
+            throws IOException {
+        String header = request.getHeader("Authorization");
+
+        if (header == null || !header.startsWith(BASIC_)) {
+            throw new CheckedException("请求头中client信息为空");
+        }
+
+        return extractAndDecodeHeader(header);
+    }
 }
