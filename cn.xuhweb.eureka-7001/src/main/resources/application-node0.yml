@@ -11,7 +11,7 @@ eureka:
       #单机 defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址（单机）。
       defaultZone: http://eureka7001.com:7001/eureka/
-#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  #      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:  #配置属性，但由于 Eureka 自我保护模式以及心跳周期长的原因，经常会遇到 Eureka Server 不剔除已关停的节点的问题
     enable-self-preservation: false
     eviction-interval-timer-in-ms: 5000
