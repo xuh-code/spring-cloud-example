@@ -1,0 +1,7 @@
+spring:
+  #  application Name
+  application:
+    name: auth-resource
+  #    dev active
+  profiles:
+    active: node0

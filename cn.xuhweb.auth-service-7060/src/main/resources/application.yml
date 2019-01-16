@@ -5,6 +5,6 @@ spring:
 #    dev active
   profiles:
     active: node0
-  cloud:
-    config:
-      enabled: false
+#  cloud:
+#    config:
+#      enabled: false

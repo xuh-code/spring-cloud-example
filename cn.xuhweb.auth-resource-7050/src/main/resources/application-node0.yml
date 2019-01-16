@@ -1,0 +1,19 @@
+server:
+  port: 7050
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://xuh.com:7060/users/current
+    client:
+      id: client_2
+      client-secret: 123456
+      access-token-uri: http://xuh.com:7060/oauth/token
+      grant-type: client_credentials,password
+      scope: server
+
+# 注册到注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
