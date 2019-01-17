@@ -21,6 +21,9 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
+    /**
+     * 用来做验证
+     */
     @Autowired
     private AuthenticationManager authenticationManager;
 
@@ -28,7 +31,8 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     private RedisConnectionFactory redisConnectionFactory;
 
     /**
-     * 重写Auth 配置
+     * 用来配置客户端详情服务
+     * 户端详情信息在这里进行初始化，客户端详情信息写死在这里或者是通过数据库来存储调取详情信息；
      */
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
@@ -49,6 +53,12 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
                 .secret(finalSecret);
     }
 
+    /**
+     * 用来配置授权（authorization）以及令牌（token）的访问端点和令牌服务(token services)，还有token的存储方式(tokenStore)
+     *
+     * @param endpoints
+     * @throws Exception
+     */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints.tokenStore(new MyRedisTokenStore(redisConnectionFactory))
@@ -56,6 +66,12 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
                 .allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
     }
 
+    /**
+     * 用来配置令牌端点(Token Endpoint)的安全约束；
+     *
+     * @param security
+     * @throws Exception
+     */
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         //  允许表单认证

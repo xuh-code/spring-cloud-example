@@ -4,8 +4,10 @@ server:
 security:
   oauth2:
     resource:
+#      用于获取当前token的用户信息，配置
       user-info-uri: http://xuh.com:7060/users/current
     client:
+      #   clientId、client-secret等信息要和service-auth中的配置一一对应
       id: client_auth_resource
       client-secret: 123456!@#
       access-token-uri: http://xuh.com:7060/oauth/token

@@ -12,8 +12,14 @@ import org.springframework.security.oauth2.client.token.grant.client.ClientCrede
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 
 /**
+ * client用来访问被OAuth2保护的资源，service-hi作为OAuth2 Client
+ *
  * @author xuh@fitme.ai
  * @date 2019/1/16 15:19
+ */
+
+/**
+ * 注解EnableOAuth2Client开启了OAuth2 Client功能，注入一个OAuth2RestTemplate 类型的Bean用于向service-auth服务请求。
  */
 @EnableOAuth2Client
 @EnableConfigurationProperties
