@@ -10,16 +10,16 @@
     <packaging>pom</packaging>
 
     <!--<parent>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-parent</artifactId>-->
-        <!--<version>2.1.0.RELEASE</version>-->
-        <!--<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+    <!--<groupId>org.springframework.boot</groupId>-->
+    <!--<artifactId>spring-boot-starter-parent</artifactId>-->
+    <!--<version>2.1.0.RELEASE</version>-->
+    <!--<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
     <!--</parent>-->
 
 
     <modules>
         <!--  公共模块  -->
-        <module>cn.xuhweb.common</module>
+        <!--<module>cn.xuhweb.common</module>-->
         <!--  注册中心  -->
         <module>cn.xuhweb.eureka-7001</module>
 
@@ -38,6 +38,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <java.version>1.8</java.version>
+        <javadoc.version>3.0.0</javadoc.version>
         <spring-cloud.version>Finchley.SR2</spring-cloud.version>
 
         <!--Lombok-->
@@ -67,14 +68,14 @@
     <dependencies>
         <!--eureka-server服务端 -->
         <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>-->
+        <!--<groupId>org.springframework.cloud</groupId>-->
+        <!--<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>-->
         <!--</dependency>-->
 
         <!--配置中心-->
         <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-config</artifactId>-->
+        <!--<groupId>org.springframework.cloud</groupId>-->
+        <!--<artifactId>spring-cloud-starter-config</artifactId>-->
         <!--</dependency>-->
 
         <!--配置文件处理器-->
@@ -103,6 +104,11 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
@@ -124,35 +130,30 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <!--  build  -->
-    <!--<build>-->
-    <!--<finalName>microservicecloud</finalName>-->
-    <!--<resources>-->
-    <!--<resource>-->
-    <!--<directory>src/main/resources</directory>-->
-    <!--<filtering>true</filtering>-->
-    <!--</resource>-->
-    <!--</resources>-->
-    <!--<plugins>-->
-    <!--<plugin>-->
-    <!--<groupId>org.apache.maven.plugins</groupId>-->
-    <!--<artifactId>maven-resources-plugin</artifactId>-->
-    <!--<configuration>-->
-    <!--<delimiters>-->
-    <!--<delimit>$</delimit>-->
-    <!--</delimiters>-->
-    <!--</configuration>-->
-    <!--</plugin>-->
-    <!--</plugins>-->
-    <!--</build>-->
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>2.0.7.RELEASE</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <target>${java.version}</target>
+                        <source>${java.version}</source>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
     <repositories>

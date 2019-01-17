@@ -7,7 +7,6 @@
     <groupId>cn.xuhweb.common</groupId>
     <artifactId>common</artifactId>
     <version>1.0.0</version>
-    <packaging>jar</packaging>
 
     <name>common</name>
     <description>common</description>
@@ -112,10 +111,4 @@
             <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-        </plugins>
-    </build>
-
 </project>
