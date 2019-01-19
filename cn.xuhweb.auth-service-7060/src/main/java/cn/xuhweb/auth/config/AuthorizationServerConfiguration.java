@@ -1,6 +1,5 @@
 package cn.xuhweb.auth.config;
 
-import cn.xuhweb.auth.customImpl.MyRedisTokenStore;
 import cn.xuhweb.auth.dao.UserServiceDetail;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
@@ -57,13 +55,13 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     private ClientDetailsService clientDetailsService;
 
     @Bean
-    public TokenStore tokenStore(){
+    public TokenStore tokenStore() {
         return new JdbcTokenStore(dataSource);
     }
 
     // 声明 ClientDetails实现
     @Bean
-    public ClientDetailsService clientDetailsService(){
+    public ClientDetailsService clientDetailsService() {
         return new JdbcClientDetailsService(dataSource);
     }
 

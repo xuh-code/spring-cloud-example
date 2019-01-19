@@ -11,6 +11,10 @@ spring:
   redis:
     host: 127.0.0.1
     database: 6
+  #  解决缓存失效报错问题 .
+  servlet:
+    multipart:
+      location: /data/upload_tmp
 
   # datasoure MySQL JDBC
   jpa:
