@@ -3,7 +3,6 @@ package cn.xuhweb.auth.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -45,28 +44,28 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             "/oauth/**"
     };
 
-    @Bean
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        AuthenticationManager manager = super.authenticationManagerBean();
-        return manager;
-    }
+//    @Bean
+//    @Override
+//    public AuthenticationManager authenticationManagerBean() throws Exception {
+//        AuthenticationManager manager = super.authenticationManagerBean();
+//        return manager;
+//    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.formLogin()
-                .and()
-                .requestMatchers().anyRequest()
-                .and()
-                .authorizeRequests()
-                .antMatchers(AUTH_WHITELIST).permitAll();
-        //  表单登录
 //        http.formLogin()
 //                .and()
-//                //  任何请求都需要认证
+//                .requestMatchers().anyRequest()
+//                .and()
 //                .authorizeRequests()
-//                .anyRequest()
-//                .authenticated();
+//                .antMatchers(AUTH_WHITELIST).permitAll();
+        //  表单登录
+        http.formLogin()
+                .and()
+                //  任何请求都需要认证
+                .authorizeRequests()
+                .anyRequest()
+                .authenticated();
     }
 
 }
