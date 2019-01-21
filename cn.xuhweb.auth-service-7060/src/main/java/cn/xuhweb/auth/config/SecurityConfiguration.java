@@ -54,10 +54,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.requestMatchers().anyRequest()
+        http.formLogin()
+                .and()
+                .requestMatchers().anyRequest()
                 .and()
                 .authorizeRequests()
                 .antMatchers(AUTH_WHITELIST).permitAll();
+        //  表单登录
+//        http.formLogin()
+//                .and()
+//                //  任何请求都需要认证
+//                .authorizeRequests()
+//                .anyRequest()
+//                .authenticated();
     }
 
 }

@@ -22,7 +22,7 @@ spring:
       ddl-auto: update
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    username: root
+    username: xuh
     password: root
     url: jdbc:mysql://xuh.com:3306/xuhweb.auth-service?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
 
