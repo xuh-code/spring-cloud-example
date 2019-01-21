@@ -24,7 +24,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
-//    @Bean
+    //    @Bean
 //    @Override
 //    protected UserDetailsService userDetailsService() {
 //        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
@@ -36,7 +36,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //
 //        return manager;
 //    }
-
+    private static final String[] AUTH_WHITELIST = {
+            // -- swagger ui
+            "/swagger-resources/**",
+            "/swagger-ui.html",
+            "/v2/api-docs",
+            "/webjars/**",
+            "/oauth/**"
+    };
 
     @Bean
     @Override
@@ -50,7 +57,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.requestMatchers().anyRequest()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/oauth/**").permitAll();
+                .antMatchers(AUTH_WHITELIST).permitAll();
     }
 
 }
