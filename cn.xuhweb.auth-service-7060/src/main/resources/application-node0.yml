@@ -14,7 +14,7 @@ spring:
   #  解决缓存失效报错问题 .
   servlet:
     multipart:
-      location: /data/upload_tmp
+      location: /data/tmp
 
   # datasoure MySQL JDBC
   jpa:
