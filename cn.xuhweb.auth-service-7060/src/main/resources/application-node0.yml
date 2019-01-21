@@ -11,16 +11,20 @@ spring:
   redis:
     host: 127.0.0.1
     database: 6
+  #  解决缓存失效报错问题 .
+  servlet:
+    multipart:
+      location: /data/upload_tmp
 
   # datasoure MySQL JDBC
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
-#  datasource:
-#    driver-class-name: com.mysql.jdbc.Driver
-#    username: root
-#    password: root
-#    url: jdbc:mysql://localhost:3306/xuhweb.auth-service?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://xuh.com:3306/xuhweb.auth-service?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
 
 # 注册到注册中心
 eureka:
