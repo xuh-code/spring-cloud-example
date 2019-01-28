@@ -8,28 +8,31 @@ spring:
       ddl-auto: update
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    username: root
+    username: xuh
     password: root
-    url: jdbc:mysql://xuh.com:3306/xuhweb.auth-service?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
-#  解决缓存失效报错问题 .
-  servlet:
-    multipart:
-      location: /data/tmp
+    url: jdbc:mysql://xuh.com:3306/sso-auth?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
 
-
-
+#   actuator
+management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: *
+  endpoint:
+    health:
+      show-details: always
 
 security:
   oauth2:
     resource:
 #      用于获取当前token的用户信息，配置
-      user-info-uri: http://xuh.com:7060/users/current
+      user-info-uri: http://xuh.com:7060/oauth/token_key
     client:
       #   clientId、client-secret等信息要和service-auth中的配置一一对应
       id: client_auth_resource
       client-secret: 123456!@#
       access-token-uri: http://xuh.com:7060/oauth/token
-      userAuthorizationUri: http://localhost:7060/oauth/authorize
+      userAuthorizationUri: http://xuh.com:7060/oauth/authorize
       grant-type: client_credentials,password
       scope: server
 

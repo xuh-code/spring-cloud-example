@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -19,6 +20,9 @@ import org.springframework.security.oauth2.provider.client.JdbcClientDetailsServ
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 
 import javax.sql.DataSource;
 import java.util.concurrent.TimeUnit;
@@ -56,7 +60,19 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
     @Bean
     public TokenStore tokenStore() {
-        return new JdbcTokenStore(dataSource);
+//        return new JdbcTokenStore(dataSource);
+        //  使用Jwt生成token
+        return new JwtTokenStore(jwtAccessTokenConverter());
+    }
+
+
+    @Bean
+    public JwtAccessTokenConverter jwtAccessTokenConverter(){
+        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("auth-jwt.jks"), "auth-jwt-test".toCharArray());
+
+        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("auth-jwt"));
+        return converter;
     }
 
     // 声明 ClientDetails实现
@@ -106,9 +122,13 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 //                .authenticationManager(authenticationManager)
 //                .allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
 
-        //  存入数据库
-        endpoints.tokenStore(tokenStore).authenticationManager(authenticationManager)
-                .userDetailsService(userServiceDetail);
+//        //  存入数据库
+//        endpoints.tokenStore(tokenStore).authenticationManager(authenticationManager)
+//                .userDetailsService(userServiceDetail);
+
+        //  jwt生成token
+        endpoints.tokenStore(tokenStore).tokenEnhancer(jwtAccessTokenConverter())
+                .authenticationManager(authenticationManager);
 
         //  配置tokenService参数
         DefaultTokenServices tokenServices = new DefaultTokenServices();
