@@ -91,8 +91,6 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         String finalSecret = "{bcrypt}" + new BCryptPasswordEncoder().encode("123456!@#");
 
         logger.info("client_id_secret = " + finalSecret);
-
-
         // 配置两个客户端，一个用于password认证一个用于client认证
 //        clients.inMemory().withClient("client_auth_resource")
 ////                .resourceIds(Utils.RESOURCEIDS.ORDER)

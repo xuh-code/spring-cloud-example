@@ -26,7 +26,14 @@ zuul:
       strip-prefix: false # 不截取匹配路径
       serviceId: new-center
       path: /news/**
-
+    auth-service:
+      strip-prefix: false
+      serviceId: auth-service
+      path: /oauth/**
+    auth-resource:
+      strip-prefix: false
+      serviceId: auth-resource
+      path: /auth-resource/**
 
 logging:
   level:
